@@ -1,225 +1,101 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Марии от Димы ❤️</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Марии от Димы ❤️</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', sans-serif;
+}
 
-    body {
-      min-height: 100vh;
-      background: #ffe6f0;
-      overflow-x: hidden;
-      position: relative;
-      text-align: center;
-      padding: 40px 20px;
-    }
 
-    .hearts {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      overflow: hidden;
-      z-index: 0;
-    }
+body {
+min-height: 100vh;
+background: #ffe6f0;
+overflow-x: hidden;
+position: relative;
+text-align: center;
+padding: 40px 20px;
+}
 
-    .heart {
-      position: absolute;
-      color: rgba(255, 0, 90, 0.4);
-      animation: float 10s linear infinite;
-    }
 
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) scale(1);
-        opacity: 0;
-      }
-      10% { opacity: 1; }
-      100% {
-        transform: translateY(-10vh) scale(1.5);
-        opacity: 0;
-      }
-    }
+.hearts {
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+overflow: hidden;
+z-index: 0;
+}
 
-    h1 {
-      font-size: 48px;
-      color: #d1005d;
-      margin-bottom: 30px;
-      position: relative;
-      z-index: 1;
-    }
 
-    .love-text {
-      font-size: 20px;
-      color: #444;
-      max-width: 800px;
-      margin: 0 auto 50px;
-      line-height: 1.8;
-      position: relative;
-      z-index: 1;
-    }
+.heart {
+position: absolute;
+color: rgba(255, 0, 90, 0.4);
+animation: float 10s linear infinite;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-bottom: 60px;
-      position: relative;
-      z-index: 1;
-    }
 
-    .gallery img {
-      width: 100%;
-      max-height: 250px;
-      object-fit: contain;
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      transition: transform 0.4s ease;
-    }
+@keyframes float {
+0% {
+transform: translateY(100vh) scale(1);
+opacity: 0;
+}
+10% { opacity: 1; }
+100% {
+transform: translateY(-10vh) scale(1.5);
+opacity: 0;
+}
+}
 
-    .gallery img:hover {
-      transform: scale(1.07);
-    }
 
-    .certificate {
-      background: white;
-      padding: 50px 40px;
-      border-radius: 25px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-      max-width: 650px;
-      margin: auto;
-      position: relative;
-      z-index: 1;
-    }
+h1 {
+font-size: 48px;
+color: #d1005d;
+margin-bottom: 30px;
+position: relative;
+z-index: 1;
+}
 
-    .certificate h2 {
-      color: #d1005d;
-      margin-bottom: 25px;
-      font-size: 28px;
-    }
 
-    .certificate p {
-      font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
+.love-text {
+font-size: 20px;
+color: #444;
+max-width: 800px;
+margin: 0 auto 50px;
+line-height: 1.8;
+position: relative;
+z-index: 1;
+}
 
-    button {
-      margin-top: 20px;
-      padding: 16px 35px;
-      font-size: 18px;
-      border: none;
-      border-radius: 30px;
-      background: #ff2e84;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-    }
 
-    button:hover {
-      background: #d1005d;
-      transform: scale(1.05);
-    }
+.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+margin-bottom: 60px;
+position: relative;
+z-index: 1;
+}
 
-    footer {
-      margin-top: 70px;
-      font-size: 14px;
-      color: #777;
-      position: relative;
-      z-index: 1;
-    }
-  </style>
-</head>
-<body>
 
-<div class="hearts" id="hearts"></div>
+.gallery img {
+width: 100%;
+height: 250px;
+object-fit: cover;
+border-radius: 20px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+transition: transform 0.4s ease;
+aspect-ratio: 1 / 1;
+}
 
-<h1>Мария, с Днём Святого Валентина ❤️</h1>
 
-<div class="love-text">
-  Мария…<br><br>
-  Я люблю тебя так сильно, что не возможно описать всеми словами мира.
-  Ты - частичка моего сердца. Моё спокойствие. Моё вдохновение. Мой антистресс:)
-  С тобой мир наполняется яркими красками.<br><br>
+.gallery img:hover {
+transform: scale(1.07);
+}
 
-  Я люблю твою улыбку, твой взгляд, твой голос.
-  Люблю то, как ты смеёшься, как ты бомбишь на меня.
-  Люблю даже тишину рядом с тобой.
-  Потому что рядом с тобой я чувствую себя на своем месте.<br><br>
-
-  Ты - моя нежность и моя страсть.
-  Моё счастье и моя бесконечность.
-  И я хочу проживать каждый день, держа тебя за руку.
-  Встречать с тобой закаты и рассветы.<br><br>
-
-  Я люблю тебя. Сильно. По‑настоящему.
-  И это чувство с каждым днём становится только больше.
-  Навсегда твой, Дима ❤️
-</div>
-
-<div class="gallery">
-  <img src="Мы 1.jpg" alt="valentine">
-  <img src="Мы 2.jpg" alt="valentine">
-  <img src="Мы 3.jpg" alt="valentine">
-</div>
-
-<div class="certificate">
-  <h2>Подарочный сертификат для Марии 💖</h2>
-  <p>
-    Этот подарок — лишь маленький знак моей огромной любви.
-    Но знай: если бы можно было, я бы подарил тебе весь мир.
-  </p>
-  <p>
-    С бесконечной любовью,<br>
-    навсегда твой Дима ❤️
-  </p>
-  <button onclick="downloadCertificate()">Скачать сертификат</button>
-</div>
-
-<footer>14 февраля 2026 — день, когда я ещё раз скажу, как сильно тебя люблю 💕</footer>
-
-<script>
-  const heartsContainer = document.getElementById('hearts');
-  for (let i = 0; i < 40; i++) {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.innerHTML = '❤';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = (5 + Math.random() * 5) + 's';
-    heart.style.fontSize = (15 + Math.random() * 20) + 'px';
-    heartsContainer.appendChild(heart);
-  }
-
-  function downloadCertificate() {
-    const content = `ПОДАРОЧНЫЙ СЕРТИФИКАТ ДЛЯ МАРИИ
-
-Мария…
-Ты — любовь всей моей жизни.
-Ты — моё счастье, моя нежность и моя бесконечность.
-
-Я люблю тебя сильнее, чем можно описать словами.
-И всегда буду рядом.
-
-С любовью, навсегда твой Дима ❤️
-
-Дата: 14 февраля 2026`;
-
-    const blob = new Blob([content], { type: 'text/plain' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'Сертификат_для_Марии_от_Димы.txt';
-    link.click();
-  }
-</script>
-
-</body>
-</html>
