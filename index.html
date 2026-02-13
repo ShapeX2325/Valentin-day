@@ -186,6 +186,53 @@
       position: relative;
       z-index: 1;
     }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+      max-width: 400px;
+    }
+
+    .gift-box {
+      font-size: 80px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    #giftText {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #d1005d;
+      }
+
+    .close-btn {
+        margin-top: 25px;
+        padding: 10px 25px;
+        border-radius: 20px;
+        border: none;
+        background: #ff2e84;
+        color: white;
+        cursor: pointer;
+      }
   </style>
 </head>
 <body>
@@ -237,7 +284,15 @@
     С бесконечной любовью,<br>
     навсегда твой Дима ❤️
   </p>
-  <button onclick="downloadCertificate()">Скачать сертификат</button>
+  <button onclick="openGift()">Забрать подарок 🎁</button>
+</div>
+  <!-- Модальное окно -->
+<div class="modal" id="giftModal">
+  <div class="modal-content">
+    <div class="gift-box" onclick="openBox()">🎁</div>
+    <p id="giftText">Нажми на меня 💖</p>
+    <button class="close-btn" onclick="closeGift()">Закрыть</button>
+  </div>
 </div>
 
 <footer>14 февраля 2026 — день, когда я ещё раз скажу, как сильно тебя люблю 💕</footer>
@@ -254,26 +309,26 @@
     heartsContainer.appendChild(heart);
   }
 
-  function downloadCertificate() {
-    const content = `ПОДАРОЧНЫЙ СЕРТИФИКАТ ДЛЯ МАРИИ
+function openGift() {
+  document.getElementById('giftModal').style.display = 'flex';
+}
 
-Мария…
-Ты — любовь всей моей жизни.
-Ты — моё счастье, моя нежность и моя бесконечность.
+function closeGift() {
+  document.getElementById('giftModal').style.display = 'none';
+  resetGift();
+}
 
-Я люблю тебя сильнее, чем можно описать словами.
-И всегда буду рядом.
+function openBox() {
+  const text = document.getElementById('giftText');
+  text.innerHTML = `
+    💖 Твой подарок — это купон на 3 000 рублей в Золотом яблоке! 💖<br><br>
+    Для его получения обращаться к любимому человеку ❤️
+  `;
+}
 
-С любовью, навсегда твой Дима ❤️
-
-Дата: 14 февраля 2026`;
-
-    const blob = new Blob([content], { type: 'text/plain' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'Сертификат_для_Марии_от_Димы.txt';
-    link.click();
-  }
+function resetGift() {
+  document.getElementById('giftText').innerHTML = "Нажми на меня 💖";
+}
 </script>
 
 </body>
